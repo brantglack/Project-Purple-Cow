@@ -1,9 +1,47 @@
+@use './normalize.scss';
 $white: #fff;
 $silver: #bdc3c7;
 $purple: #9b59b6;
+$small-phone: 500px;
+$medium-phone: 640px;
+
+header{
+  color: $purple;
+  box-shadow: 0px 0px 5px $silver;
+  padding: 0.5em 1em;
+  line-height: 2em;
+  font-weight: 500;
+}
+
+main{
+  padding: 1em 2em;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  @media all and (min-width: $small-phone){
+    padding: 2em 3em 1em;
+  }
+
+  h1,h2,h3,h4,.stand--message, .stand--count{
+    text-align: center;
+  }
+
+  h1{
+    font-size: 2em;
+
+    @media all and (min-width: $small-phone){
+      font-size: 3em;
+    }
+  }
+  .stand--message, .stand--count{
+    font-size: 1.25em;
+  }
+
+}
 
 .hitButton{
   max-width: 300px;
+  text-align: center;
   width: 100%;
   background-color: $white;
   border: $purple solid 2px;
@@ -12,8 +50,11 @@ $purple: #9b59b6;
   text-transform: uppercase;
   color: $purple;
   box-shadow: 3px 3px 5px $silver;
+  padding: 1em 1.5em;
   cursor: pointer;
   transition: 300ms;
+  margin: 2.5em auto;
+  display: block;
 
   &:hover{
     background-color: $purple;
@@ -21,4 +62,44 @@ $purple: #9b59b6;
     transition: 300ms;
 
   }
+}
+
+p{
+  font-size: 1em;
+  line-height: 1.5rem;
+}
+
+.columns{
+  @media all and (min-width: $medium-phone){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media all and (min-width: 800px){
+    align-items: start;
+    margin: 2em 0;
+  }
+
+  div{
+    &:first-of-type{
+      @media all and (min-width: $medium-phone){
+        width: 40%;
+      }
+    }
+  
+    &:last-of-type{
+      @media all and (min-width: $medium-phone){
+        width: 50%;
+        line-height: 1.5rem;
+      }
+    }
+  }
+
+  img{
+    width: 100%;
+    max-width: 500px;
+  }
+
 }

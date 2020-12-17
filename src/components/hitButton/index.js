@@ -4,6 +4,6 @@ export default (props) => {
 
 
   return (
-    <button className="hitButton" onClick={props.counted}>Be counted</button>
+    <button className="hitButton" onClick={props.counted}>{props.text}</button>
   )
 }
