@@ -1,7 +1,9 @@
 import React from 'react';
-export default () => {
+
+export default (props) => {
+
 
   return (
-    <button>Hit</button>
+    <button className="hitButton" onClick={props.counted}>Be counted</button>
   )
 }

@@ -1,0 +1,24 @@
+$white: #fff;
+$silver: #bdc3c7;
+$purple: #9b59b6;
+
+.hitButton{
+  max-width: 300px;
+  width: 100%;
+  background-color: $white;
+  border: $purple solid 2px;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $purple;
+  box-shadow: 3px 3px 5px $silver;
+  cursor: pointer;
+  transition: 300ms;
+
+  &:hover{
+    background-color: $purple;
+    color: $white;
+    transition: 300ms;
+
+  }
+}
