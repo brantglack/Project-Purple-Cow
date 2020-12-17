@@ -19,10 +19,6 @@ class MyComponent extends React.Component {
     }
   }
 
-  componentDidMount(){
-    this.count()
-  }
-
   count(){
     axios.get(`https://api.countapi.xyz/hit/${namespace}/${key}`).then( result => {
       var {value }= result.data
@@ -43,9 +39,13 @@ class MyComponent extends React.Component {
           <div className="stand--message">
             Have your voice heard about making education available for all.
           </div>
-          <div className="stand--count">
-            Join the <strong>{this.state.count}</strong> who have been counted.
-          </div>
+          
+          {this.state.count != 0 && 
+            <div className="stand--count">
+              You've join the <strong>{this.state.count}</strong> who have been counted.
+            </div>
+          }
+
           <Hit text="Be counted" counted={this.count.bind(this)}></Hit>
           <Details heading="Lorem ipsum dolor" text="Fusce consequat egestas elit quis vehicula. Phasellus a magna enim. Nullam auctor nibh at scelerisque interdum. Maecenas et venenatis erat. Mauris posuere mollis mi, vel tincidunt purus. Nunc blandit velit vitae fringilla pulvinar. Curabitur lobortis tempor quam at imperdiet."></Details>
           <TwoColumn img='/images/photo-1532541094034-b353b63dcf7d.jpeg' alt="Stand tall and be heard" body="Quisque cursus rhoncus felis eu imperdiet. Vestibulum pretium, lorem eu molestie vestibulum, tellus augue fermentum magna, ut semper quam urna a diam. Aenean mattis, orci a vulputate lobortis, elit nunc luctus lectus, eget ultrices elit elit sed leo. Proin pellentesque tortor at justo dapibus consectetur. Etiam sit amet massa vitae turpis dignissim consequat. Fusce consequat egestas elit quis vehicula. Phasellus a magna enim. Nullam auctor nibh at scelerisque interdum. Fusce consequat egestas elit quis vehicula. Phasellus a magna enim. Nullam auctor nibh at scelerisque interdum. "></TwoColumn>
